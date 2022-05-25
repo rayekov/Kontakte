@@ -9,6 +9,8 @@ it's a work in progress.  ;-)
 - on this commit the main UI was designed. <br/> 
 - Now there is a form for creating and updating a contact, a datagrid that will soon contain the added contacts list, with a search bar and some buttons. <br/> 
 - also designed and added a logo and an icon :-)
+- Designed then linked the database 
+- created the corresponding class and CRUD methods
 <br/>
 ### Languages and Frameworks used :
 <img align="left"  alt="CSHARP" width="28px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/csharp/csharp.png" /> 
