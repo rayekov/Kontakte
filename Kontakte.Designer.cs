@@ -1,6 +1,6 @@
 ﻿namespace Kontakte
 {
-    partial class Form1
+    partial class Kontakte
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Kontakte));
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.textBoxContactID = new System.Windows.Forms.TextBox();
             this.labelContactID = new System.Windows.Forms.Label();
@@ -39,21 +39,21 @@
             this.labelPhoneNumber = new System.Windows.Forms.Label();
             this.textBoxPhoneNumber = new System.Windows.Forms.TextBox();
             this.labelAddress = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxAddress = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.labelEmail = new System.Windows.Forms.Label();
             this.buttonCreate = new System.Windows.Forms.Button();
             this.buttonClearAll = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonUpdate = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewContactsList = new System.Windows.Forms.DataGridView();
             this.labelSearch = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxContactsList = new System.Windows.Forms.TextBox();
             this.buttonImport = new System.Windows.Forms.Button();
             this.buttonExport = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelRayekov = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContactsList)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxLogo
@@ -75,6 +75,7 @@
             this.textBoxContactID.Location = new System.Drawing.Point(209, 208);
             this.textBoxContactID.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxContactID.Name = "textBoxContactID";
+            this.textBoxContactID.ReadOnly = true;
             this.textBoxContactID.Size = new System.Drawing.Size(354, 30);
             this.textBoxContactID.TabIndex = 1;
             this.textBoxContactID.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -175,27 +176,27 @@
             this.labelAddress.Tag = "";
             this.labelAddress.Text = "Address";
             // 
-            // textBox4
+            // textBoxAddress
             // 
-            this.textBox4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox4.Location = new System.Drawing.Point(209, 407);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(354, 97);
-            this.textBox4.TabIndex = 9;
+            this.textBoxAddress.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxAddress.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxAddress.Location = new System.Drawing.Point(209, 407);
+            this.textBoxAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBoxAddress.Multiline = true;
+            this.textBoxAddress.Name = "textBoxAddress";
+            this.textBoxAddress.Size = new System.Drawing.Size(354, 97);
+            this.textBoxAddress.TabIndex = 9;
             // 
-            // textBox1
+            // textBoxEmail
             // 
-            this.textBox1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox1.Location = new System.Drawing.Point(209, 369);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(354, 30);
-            this.textBox1.TabIndex = 11;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.textBoxEmail.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxEmail.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxEmail.Location = new System.Drawing.Point(209, 369);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(354, 30);
+            this.textBoxEmail.TabIndex = 11;
+            this.textBoxEmail.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // labelEmail
             // 
@@ -251,6 +252,7 @@
             this.buttonDelete.TabIndex = 15;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonUpdate
             // 
@@ -264,16 +266,19 @@
             this.buttonUpdate.TabIndex = 16;
             this.buttonUpdate.Text = "Update";
             this.buttonUpdate.UseVisualStyleBackColor = false;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
-            // dataGridView1
+            // dataGridViewContactsList
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(746, 210);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(952, 388);
-            this.dataGridView1.TabIndex = 17;
+            this.dataGridViewContactsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewContactsList.Location = new System.Drawing.Point(746, 210);
+            this.dataGridViewContactsList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dataGridViewContactsList.Name = "dataGridViewContactsList";
+            this.dataGridViewContactsList.RowTemplate.Height = 25;
+            this.dataGridViewContactsList.Size = new System.Drawing.Size(952, 388);
+            this.dataGridViewContactsList.TabIndex = 17;
+            this.dataGridViewContactsList.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewContactsList_RowHeaderMouseClick);
+            this.dataGridViewContactsList.Enter += new System.EventHandler(this.dataGridViewContactsList_CellContentClick);
             // 
             // labelSearch
             // 
@@ -288,15 +293,15 @@
             this.labelSearch.Text = "Search :";
             this.labelSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox2
+            // textBoxContactsList
             // 
-            this.textBox2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox2.Location = new System.Drawing.Point(837, 164);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(860, 30);
-            this.textBox2.TabIndex = 19;
+            this.textBoxContactsList.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxContactsList.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxContactsList.Location = new System.Drawing.Point(837, 164);
+            this.textBoxContactsList.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBoxContactsList.Name = "textBoxContactsList";
+            this.textBoxContactsList.Size = new System.Drawing.Size(860, 30);
+            this.textBoxContactsList.TabIndex = 19;
             // 
             // buttonImport
             // 
@@ -322,38 +327,38 @@
             this.buttonExport.Text = "Export...";
             this.buttonExport.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // labelRayekov
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lucida Handwriting", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(837, 809);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(243, 17);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "v0.1 Brought to you by @rayekov";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.labelRayekov.AutoSize = true;
+            this.labelRayekov.Font = new System.Drawing.Font("Lucida Handwriting", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.labelRayekov.Location = new System.Drawing.Point(837, 809);
+            this.labelRayekov.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelRayekov.Name = "labelRayekov";
+            this.labelRayekov.Size = new System.Drawing.Size(243, 17);
+            this.labelRayekov.TabIndex = 22;
+            this.labelRayekov.Text = "v0.1 Brought to you by @rayekov";
+            this.labelRayekov.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // Form1
+            // Kontakte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1920, 848);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelRayekov);
             this.Controls.Add(this.buttonExport);
             this.Controls.Add(this.buttonImport);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxContactsList);
             this.Controls.Add(this.labelSearch);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewContactsList);
             this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonClearAll);
             this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.labelEmail);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.labelAddress);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBoxAddress);
             this.Controls.Add(this.labelPhoneNumber);
             this.Controls.Add(this.textBoxPhoneNumber);
             this.Controls.Add(this.labelLastName);
@@ -367,12 +372,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.Name = "Form1";
+            this.Name = "Kontakte";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kontakte";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContactsList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,18 +395,18 @@
         private Label labelPhoneNumber;
         private TextBox textBoxPhoneNumber;
         private Label labelAddress;
-        private TextBox textBox4;
-        private TextBox textBox1;
+        private TextBox textBoxAddress;
+        private TextBox textBoxEmail;
         private Label labelEmail;
         private Button buttonCreate;
         private Button buttonClearAll;
         private Button buttonDelete;
         private Button buttonUpdate;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewContactsList;
         private Label labelSearch;
-        private TextBox textBox2;
+        private TextBox textBoxContactsList;
         private Button buttonImport;
         private Button buttonExport;
-        private Label label1;
+        private Label labelRayekov;
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Kontakte.Models
 {
-    public class Kontakte:DbConnection
+    public class Kontakt:DbConnection
     {   // fields
         public int contactID { get; set; }
         public string firstName { get; set; } 
@@ -21,7 +21,7 @@ namespace Kontakte.Models
         //Method for selecting data from database
         public DataTable Select()
         {   //connecting to database
-            SqlConnection conn = GetConnection();
+            var conn = GetConnection();
             DataTable dt = new DataTable();
             try
             {   //query
@@ -43,13 +43,13 @@ namespace Kontakte.Models
         }
 
         //method to insert data in database
-        public bool Insert(Kontakte k)
+        public bool Insert(Kontakt k)
         {
             bool isSuccess= false;
-            SqlConnection conn = GetConnection();
+            var conn = GetConnection() ;
             try
             {
-                string sql = "INSERT INTO Table_Contact * FROM Table_Contact(firstName, lastName, phoneNumber, address, email) VALUES (@firstName, @lastName, @phoneNumber, @address, @email) ";
+                string sql = "INSERT INTO Table_Contact (firstName, lastName, phoneNumber, address, email) VALUES (@firstName, @lastName, @phoneNumber, @address, @email) ";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@firstName", k.firstName);
                 cmd.Parameters.AddWithValue("@lastName", k.lastName);
@@ -62,12 +62,13 @@ namespace Kontakte.Models
                 if (rows>0)
                 {
                     isSuccess=true;
-                } 
+                }
+                
 
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -77,7 +78,7 @@ namespace Kontakte.Models
         }
 
        
-        public bool Update(Kontakte k)
+        public bool Update(Kontakt k)
         {
             bool isSuccess= false;
             SqlConnection conn = GetConnection();
@@ -102,7 +103,7 @@ namespace Kontakte.Models
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -111,7 +112,7 @@ namespace Kontakte.Models
             return isSuccess;
 
         }
-        public bool Delete(Kontakte k)
+        public bool Delete(Kontakt k)
         {
             bool isSuccess = false;
             SqlConnection conn = GetConnection();

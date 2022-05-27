@@ -11,6 +11,9 @@ it's a work in progress.  ;-)
 - also designed and added a logo and an icon :-)
 - Designed then linked the database 
 - created the corresponding class and CRUD methods
+- Fixed an error on Insert query (Oops)
+- CRUD Buttons are now working
+
 <br/>
 ### Languages and Frameworks used :
 <img align="left"  alt="CSHARP" width="28px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/csharp/csharp.png" /> 
