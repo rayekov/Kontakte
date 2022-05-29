@@ -49,8 +49,10 @@ namespace Kontakte.Models
             var conn = GetConnection() ;
             try
             {
+                //select query
                 string sql = "INSERT INTO Table_Contact (firstName, lastName, phoneNumber, address, email) VALUES (@firstName, @lastName, @phoneNumber, @address, @email) ";
                 SqlCommand cmd = new SqlCommand(sql, conn);
+                //binding command parameters to their respective values
                 cmd.Parameters.AddWithValue("@firstName", k.firstName);
                 cmd.Parameters.AddWithValue("@lastName", k.lastName);
                 cmd.Parameters.AddWithValue("@phoneNumber", k.phoneNumber);
@@ -58,7 +60,9 @@ namespace Kontakte.Models
                 cmd.Parameters.AddWithValue("@email", k.email);
 
                 conn.Open();
+                //ExecuteNonQuery returns the number of rows affected
                 int rows = cmd.ExecuteNonQuery();
+               
                 if (rows>0)
                 {
                     isSuccess=true;
@@ -132,7 +136,7 @@ namespace Kontakte.Models
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
             finally
             {

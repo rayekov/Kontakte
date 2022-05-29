@@ -13,6 +13,7 @@ it's a work in progress.  ;-)
 - created the corresponding class and CRUD methods
 - Fixed an error on Insert query (Oops)
 - CRUD Buttons are now working
+- Search functionnality
 
 <br/>
 ### Languages and Frameworks used :

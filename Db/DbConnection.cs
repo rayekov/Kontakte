@@ -12,10 +12,10 @@ namespace Kontakte.Db
     {
         private readonly string connectionString;
         public DbConnection()
-        {
+        {   //database connection string
             connectionString = "Server=(local);DataBase=Kontakte; Integrated Security=true";
         }
-
+        // connects to database
         protected SqlConnection GetConnection()
         {
             return new SqlConnection(connectionString);

@@ -1,5 +1,6 @@
 using Kontakte.Models;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace Kontakte
 {
@@ -169,6 +170,26 @@ namespace Kontakte
             //after inserting, load the new data on DataGridViewSearchResults field
             DataTable dt = contact.Select();
             dataGridViewContactsList.DataSource = dt;
+
+        }
+
+
+        static string connectionString = "Server=(local);DataBase=Kontakte; Integrated Security=true";
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            //get the keyword from searchbar
+            string keyword = textBoxSearch.Text;
+            var conn = new SqlConnection(connectionString);
+            DataTable dt = new DataTable();
+           //query
+            string sql = "SELECT * FROM Table_Contact WHERE firstName LIKE '%"+keyword+ "%' OR lastName LIKE '%" + keyword + "%' OR phoneNumber LIKE '%" + keyword + "%'";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql,conn);
+            adapter.Fill(dt);
+
+            //fill the data grid view with results 
+            dataGridViewContactsList.DataSource = dt;
+           
+        
 
         }
     }

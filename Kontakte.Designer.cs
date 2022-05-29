@@ -48,7 +48,7 @@
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.dataGridViewContactsList = new System.Windows.Forms.DataGridView();
             this.labelSearch = new System.Windows.Forms.Label();
-            this.textBoxContactsList = new System.Windows.Forms.TextBox();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.buttonImport = new System.Windows.Forms.Button();
             this.buttonExport = new System.Windows.Forms.Button();
             this.labelRayekov = new System.Windows.Forms.Label();
@@ -293,15 +293,16 @@
             this.labelSearch.Text = "Search :";
             this.labelSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBoxContactsList
+            // textBoxSearch
             // 
-            this.textBoxContactsList.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxContactsList.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxContactsList.Location = new System.Drawing.Point(837, 164);
-            this.textBoxContactsList.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.textBoxContactsList.Name = "textBoxContactsList";
-            this.textBoxContactsList.Size = new System.Drawing.Size(860, 30);
-            this.textBoxContactsList.TabIndex = 19;
+            this.textBoxSearch.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxSearch.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxSearch.Location = new System.Drawing.Point(837, 164);
+            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(860, 30);
+            this.textBoxSearch.TabIndex = 19;
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
             // 
             // buttonImport
             // 
@@ -348,7 +349,7 @@
             this.Controls.Add(this.labelRayekov);
             this.Controls.Add(this.buttonExport);
             this.Controls.Add(this.buttonImport);
-            this.Controls.Add(this.textBoxContactsList);
+            this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.labelSearch);
             this.Controls.Add(this.dataGridViewContactsList);
             this.Controls.Add(this.buttonUpdate);
@@ -404,7 +405,7 @@
         private Button buttonUpdate;
         private DataGridView dataGridViewContactsList;
         private Label labelSearch;
-        private TextBox textBoxContactsList;
+        private TextBox textBoxSearch;
         private Button buttonImport;
         private Button buttonExport;
         private Label labelRayekov;
